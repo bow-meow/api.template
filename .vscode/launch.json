@@ -1,0 +1,23 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "cppvsdbg",
+            "request": "launch",
+            "name": "debug (win)",
+            "program": "${workspaceFolder}/target/debug/data_api.exe",
+            "cwd": "${workspaceFolder}",
+            "args": []
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "debug (osx)",
+            "program": "${workspaceFolder}/target/debug/data_api",
+            "cwd": "${workspaceFolder}",
+            "args": [],
+            "stopOnEntry": true,
+        },
+
+    ],
+}

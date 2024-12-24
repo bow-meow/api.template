@@ -1,0 +1,31 @@
+[package]
+name = "data_api"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+axum = "0.7.9"
+reqwest = { version = "0.12.9", features = ["json"] }
+anyhow = "1.0.94"
+thiserror = "2.0.7"
+tokio = { version = "1.42.0", features = ["full"] }
+serde = { version = "1.0.216", features = ["derive"] }
+chrono = { version = "0.4.39", features = ["serde"] }
+tokio-util = { version = "0.7.13", features = ["compat"] }
+utoipa = "5.2.0"
+utoipa-swagger-ui = "8.1.0"
+serde_json = "1.0.133"
+tracing = "0.1.41"
+tracing-subscriber = "0.3.19"
+tracing-log = "0.2.0"
+futures = "0.3.31"
+moka = { version = "0.12.8", features = ["future"] }
+base64 = "0.22.1"
+
+[target.'cfg(target_os = "macos")'.dependencies]
+tiberius = { version = "0.12.3", default-features = false, features = ["rustls","tds73","chrono","rust_decimal"] }
+deadpool-tiberius = { version = "0.1.8", default-features = false, features = ["rustls"] }
+
+[target.'cfg(target_os = "windows")'.dependencies]
+tiberius = { version = "0.12.3", features = ["chrono", "rust_decimal"] }
+deadpool-tiberius = { version = "0.1.8" }
